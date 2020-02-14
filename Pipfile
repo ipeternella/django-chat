@@ -1,0 +1,38 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+# --- Linting tools --- #
+pylint = "*"
+pep8 = "*"
+flake8 = "*"
+# --- Testing tools --- #
+tox = "*"
+pytest = "*"
+pytest-mock = "*"
+pytest-cov = "*"
+pytest-env = "*"
+pytest-django = "*"
+
+[packages]
+# --- Django technologies --- #
+django = "~=2.2"
+django-hint = "*"
+# --- Database driver --- #
+psycopg2-binary = "*"
+# --- Logging --- #
+python-json-logger = "*"
+# --- Util functions --- #
+requests = "*"
+python-dateutil = "*"
+
+# --- ASGI/WSGI application server --- #
+daphne = "*"
+
+# --- Async tools for Django --- #
+channels = "*"
+
+[requires]
+python_version = "3.7"

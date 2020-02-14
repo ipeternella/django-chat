@@ -1,0 +1,36 @@
+version: "3.5"
+services:
+  db:
+    image: postgres:10.1-alpine
+
+  integration-tests:
+    image: python:3.8-slim
+    env_file: .env
+    working_dir: /app
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    command: >
+      sh -c "pip install tox && tox"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - "${DJANGO_BIND_PORT}:${DJANGO_BIND_PORT}"
+    depends_on:
+      - db
+    command:
+      [
+        "./wait-for-it.sh",
+        "${DB_HOST}:${DB_PORT}",
+        "-t",
+        "120",
+        "--",
+        "./start.sh",
+      ]

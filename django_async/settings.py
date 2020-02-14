@@ -29,6 +29,7 @@ else:
 
 # Application definition
 INSTALLED_APPS = [
+    "channels",  # ASGI absctraction layer must come first --> takes control over manage.py
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -66,8 +67,11 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = "django_async.wsgi.application"
+# WSGI application
+# WSGI_APPLICATION = "django_async.wsgi.application"
 
+# ASGI application (consumer)
+ASGI_APPLICATION = "django_async.routing.application"
 
 # Database
 DATABASES = {

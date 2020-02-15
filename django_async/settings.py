@@ -70,7 +70,7 @@ TEMPLATES = [
 # WSGI application
 # WSGI_APPLICATION = "django_async.wsgi.application"
 
-# ASGI application (consumer)
+# ASGI application (protocol router)
 ASGI_APPLICATION = "django_async.routing.application"
 
 # Database

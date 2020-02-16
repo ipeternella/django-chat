@@ -10,4 +10,4 @@ def index(request: HttpRequest) -> HttpResponse:
     """
     Index page of the web app.
     """
-    return render(request, template_name="index.html", context={"user_name": "igp!"})
+    return render(request, template_name="web/index.html", context={"user_name": "igp!"})

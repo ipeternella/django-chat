@@ -3,7 +3,7 @@ Django settings for the Django Async project.
 """
 import os
 
-from django_async.apps.core.apps import CoreConfig
+from django_async.apps.chatbot.apps import ChatBotConfig
 from django_async.utils import env2bool
 from pythonjsonlogger.jsonlogger import JsonFormatter
 
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    CoreConfig.name,
+    ChatBotConfig.name,
 ]
 
 MIDDLEWARE = [

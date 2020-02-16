@@ -1,0 +1,9 @@
+"""
+Module with the urls for the chatbot app.
+"""
+from django.urls import re_path
+from django_async.apps.chatbot.consumers import ChatConsumer
+
+websocket_urlpatterns = [
+    re_path(r"ws/chat/(?P<room_name>\w+)/$", ChatConsumer),
+]

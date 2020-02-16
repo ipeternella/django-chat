@@ -17,10 +17,33 @@
 </head>
 
 <body>
-    <h1>Hello:  {{ user_name }}</h1>
+    <div class="row">
+        <div class="col-12">
+            <!-- Image and text -->
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#"">
+                    <img src="https://static.djangoproject.com/img/logos/django-logo-negative.png" class="d-inline-block align-top" alt="">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+        </div>
+
+        <div class="col-8 text-center">
+            <textarea id="chat-log" cols="100" rows="20" readonly></textarea><br/>
+            <input id="chat-message-input" type="text" size="100"/><br/>
+            <input id="chat-message-submit" type="button" value="Send" class="btn btn-success"/>
+        </div>
+
+        <div class="col-2">
+        </div>
+    </div>
 
     <!-- App js -->
-    <script src="{% static 'web/js/index.js' %}"></script>
+    <script src="{% static 'web/js/chat_websocket.js' %}"></script>
 
     <!-- Bootstrap, JQuery and other JS! -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

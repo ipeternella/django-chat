@@ -1,11 +1,11 @@
 """
 Module with urls for the web app.
 """
-from django.urls import path
+from django.urls import re_path
 from django_async.apps.web import views
 
 app_name = "web"
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    re_path(r"^chat/(?P<chat_room>\w+)/(?P<chat_user>\w+)/$", views.index, name="index"),
 ]

@@ -1,9 +1,14 @@
 console.log("Chat connected!");
 
-let roomName = "room_igp";
+let paths = window.location.href.split("/").slice(3,6),
+    scheme = "ws://",
+    chatHost = window.location.host,
+    chatPrefix = "ws/chat",
+    chatRoom = paths[1],
+    userName = paths[2];
 
 let chatSocket = new WebSocket(
-    'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+    scheme + chatHost + `/${chatPrefix}` + `/${chatRoom}` + `/${userName}/`
 );
 
 chatSocket.onmessage = function(e) {

@@ -27,12 +27,11 @@ python-json-logger = "*"
 # --- Util functions --- #
 requests = "*"
 python-dateutil = "*"
-
 # --- ASGI/WSGI application server --- #
 daphne = "*"
-
 # --- Async tools for Django --- #
 channels = "*"
+channels-redis = "*"
 
 [requires]
 python_version = "3.7"

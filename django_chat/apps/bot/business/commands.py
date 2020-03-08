@@ -5,10 +5,11 @@ import logging
 from typing import List
 
 from django_chat.apps.bot.business.command_map import command_now
+from django_chat.apps.bot.business.command_map import send_sms
 
 logger = logging.getLogger(__name__)
 
-COMMAND_TO_ACTION_MAP = {"now": command_now}
+COMMAND_TO_ACTION_MAP = {"now": command_now, "sms": send_sms}
 
 
 async def run_command(cmd: str, cmd_args: List[str], chat_consumer):

@@ -11,7 +11,7 @@ from typing import Tuple
 logger = logging.getLogger(__name__)
 
 
-def get_command_from_user_message(chat_message: str) -> Tuple[Optional[str], Optional[List]]:
+def get_command_from_user_message(chat_message: str) -> Tuple[Optional[str], List]:
     """
     Attempts to extract a command from a user message.
     """
@@ -26,4 +26,4 @@ def get_command_from_user_message(chat_message: str) -> Tuple[Optional[str], Opt
         return command, command_args
 
     logger.info("No commands found!")
-    return None, None
+    return None, []

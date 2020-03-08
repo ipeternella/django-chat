@@ -9,8 +9,8 @@ from channels.http import AsgiHandler
 from channels.routing import ChannelNameRouter
 from channels.routing import ProtocolTypeRouter
 from channels.routing import URLRouter
-from django_chat.apps.chatbot.consumers import SMSChannelConsumer
-from django_chat.apps.chatbot.urls import websocket_urlpatterns
+from django_chat.apps.chat.consumers import SMSChannelConsumer
+from django_chat.apps.chat.urls import websocket_urlpatterns
 
 # main ASGI application for ASGI application servers
 application = ProtocolTypeRouter(

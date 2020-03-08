@@ -3,7 +3,8 @@ Django settings for the Django Async project.
 """
 import os
 
-from django_chat.apps.chatbot.apps import ChatBotConfig
+from django_chat.apps.bot.apps import BotConfig
+from django_chat.apps.chat.apps import ChatConfig
 from django_chat.apps.web.apps import WebConfig
 from django_chat.utils import env2bool
 from pythonjsonlogger.jsonlogger import JsonFormatter
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     WebConfig.name,
-    ChatBotConfig.name,
+    ChatConfig.name,
+    BotConfig.name,
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,4 @@ CHANNEL_LAYERS = {
     }
 }
 WORKER_CHANNEL_NAME = os.getenv("WORKER_CHANNEL")
+BOT_USER_NAME = "🤖 DJANGO BOT 🤖"

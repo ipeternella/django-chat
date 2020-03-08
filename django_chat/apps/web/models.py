@@ -21,7 +21,15 @@ class ChatUser(StandardModelMixin):
     Models a simple chat message.
     """
 
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
+
+
+class ChatRoom(StandardModelMixin):
+    """
+    Models a simple chat room.
+    """
+
+    name = models.CharField(max_length=255, unique=True)
 
 
 class ChatMessage(StandardModelMixin):
@@ -30,13 +38,5 @@ class ChatMessage(StandardModelMixin):
     """
 
     message = models.CharField(max_length=255)
-    user = models.OneToOneField(to=ChatUser, related_name="chat_user", on_delete=models.CASCADE)
-
-
-class ChatRoom(StandardModelMixin):
-    """
-    Models a simple chat room.
-    """
-
-    name = models.CharField(max_length=255)
-    messages = models.ForeignKey(to=ChatMessage, related_name="chat_room", on_delete=models.CASCADE)
+    user = models.ForeignKey(to=ChatUser, related_name="chat_user", on_delete=models.CASCADE)
+    room = models.ForeignKey(to=ChatRoom, related_name="chat_room", on_delete=models.CASCADE)

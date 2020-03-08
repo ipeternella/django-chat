@@ -7,7 +7,7 @@ import os
 import django
 from channels.routing import get_default_application  # protocol router ASGI app
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_async.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_chat.settings")
 
 django.setup()
 application = get_default_application()

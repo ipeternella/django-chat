@@ -8,10 +8,10 @@ from typing import Optional
 
 from channels.consumer import AsyncConsumer
 from channels.generic.websocket import AsyncWebsocketConsumer
-from django_async.apps.bot.business.commands import run_command
-from django_async.apps.bot.business.utils import get_command_from_user_message
-from django_async.apps.chatbot.support.utils import get_chat_room_from_url
-from django_async.apps.chatbot.support.utils import get_chat_user_from_url
+from django_chat.apps.bot.business.commands import run_command
+from django_chat.apps.bot.business.utils import get_command_from_user_message
+from django_chat.apps.chatbot.support.utils import get_chat_room_from_url
+from django_chat.apps.chatbot.support.utils import get_chat_user_from_url
 
 logger = logging.getLogger(__name__)
 

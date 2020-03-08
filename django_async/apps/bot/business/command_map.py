@@ -4,7 +4,7 @@ Command functions used by the chat bot.
 from typing import List
 
 from django.utils.timezone import now
-from django_async.apps.chatbot.support.utils import get_chat_room_from_url
+from django_chat.apps.chatbot.support.utils import get_chat_room_from_url
 
 
 async def command_now(chat_consumer, *args, **kwargs) -> None:

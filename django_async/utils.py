@@ -1,5 +1,5 @@
 """
-Module with utility functions for the django_async project.
+Module with utility functions for the django_chat project.
 """
 import ast
 import os

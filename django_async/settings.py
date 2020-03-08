@@ -3,9 +3,9 @@ Django settings for the Django Async project.
 """
 import os
 
-from django_async.apps.chatbot.apps import ChatBotConfig
-from django_async.apps.web.apps import WebConfig
-from django_async.utils import env2bool
+from django_chat.apps.chatbot.apps import ChatBotConfig
+from django_chat.apps.web.apps import WebConfig
+from django_chat.utils import env2bool
 from pythonjsonlogger.jsonlogger import JsonFormatter
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "django_async.urls"
+ROOT_URLCONF = "django_chat.urls"
 
 TEMPLATES = [
     {
@@ -70,10 +70,10 @@ TEMPLATES = [
 ]
 
 # WSGI application
-# WSGI_APPLICATION = "django_async.wsgi.application"
+# WSGI_APPLICATION = "django_chat.wsgi.application"
 
 # ASGI application (protocol router)
-ASGI_APPLICATION = "django_async.routing.application"
+ASGI_APPLICATION = "django_chat.routing.application"
 
 # Database
 DATABASES = {

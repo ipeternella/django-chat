@@ -4,7 +4,7 @@ Module with commands used by the bot.
 import logging
 from typing import List
 
-from django_async.apps.bot.business.command_map import command_now
+from django_chat.apps.bot.business.command_map import command_now
 
 logger = logging.getLogger(__name__)
 

@@ -2,7 +2,7 @@
 Module with urls for the web app.
 """
 from django.urls import re_path
-from django_async.apps.web import views
+from django_chat.apps.web import views
 
 app_name = "web"
 

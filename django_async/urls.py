@@ -6,6 +6,6 @@ from django.urls import include
 from django.urls import path
 
 urlpatterns = [
-    path("", include("django_async.apps.web.urls")),
+    path("", include("django_chat.apps.web.urls")),
     path("admin/", admin.site.urls),
 ]

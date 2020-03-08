@@ -132,3 +132,4 @@ CHANNEL_LAYERS = {
         "CONFIG": {"hosts": [(os.getenv("REDIS_HOST", "redis"), int(os.getenv("REDIS_PORT", "6379")))]},
     }
 }
+WORKER_CHANNEL_NAME = os.getenv("WORKER_CHANNEL")

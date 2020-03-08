@@ -6,11 +6,17 @@ ProtocolTypeRouter itself is the main ASGI application that wraps many consumers
 application is served to Daphne ASGI app server.
 """
 from channels.http import AsgiHandler
+from channels.routing import ChannelNameRouter
 from channels.routing import ProtocolTypeRouter
 from channels.routing import URLRouter
+from django_async.apps.chatbot.consumers import SMSChannelConsumer
 from django_async.apps.chatbot.urls import websocket_urlpatterns
 
 # main ASGI application for ASGI application servers
 application = ProtocolTypeRouter(
-    {"http": AsgiHandler, "websocket": URLRouter(websocket_urlpatterns),}  # default handler
+    {
+        "http": AsgiHandler,
+        "websocket": URLRouter(websocket_urlpatterns),
+        "channel": ChannelNameRouter({"sms_channel": SMSChannelConsumer}),
+    }
 )

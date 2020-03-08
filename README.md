@@ -63,7 +63,7 @@ Currently two commands available:
 ## Task Queue
 
 The command `/sms <user_name>` sends a message (task) to a fixed channel which is listed by a worker that can process
-such messages! This demonstrates simple task qeueus that `Channels` allows! (Simple because there's no task retrying, etc. -- not Celery!)
+such messages! This demonstrates simple task queue that `channels` allows! (Simple because there's no task retrying, etc. -- not Celery!)
 
 The worker starts listening on the channel named `sms_channel` by the following command:
 

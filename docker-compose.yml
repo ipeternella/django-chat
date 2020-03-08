@@ -1,5 +1,24 @@
 version: "3.5"
 services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file: .env
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+    command:
+      [
+        "./wait-for-it.sh",
+        "${DB_HOST}:${DB_PORT}",
+        "-t",
+        "120",
+        "--",
+        "./start-channels-worker.sh"
+      ]
   redis:
     image: redis:latest
 
@@ -29,6 +48,7 @@ services:
     depends_on:
       - db
       - redis
+      - worker
     command:
       [
         "./wait-for-it.sh",
